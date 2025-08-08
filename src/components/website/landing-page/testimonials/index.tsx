@@ -1,6 +1,5 @@
 import React from "react";
 import SectionTitle from "../../_shared/section/section-title";
-import FeaturesCard from "./testimonial-card";
 import { TESTIMONIALS } from "./constant";
 import TestimonialCard from "./testimonial-card";
 import { cn } from "@/lib/utils";

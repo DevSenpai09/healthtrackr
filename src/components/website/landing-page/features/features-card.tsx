@@ -1,9 +1,7 @@
-import { inter, poppins } from "@/lib/fonts";
+import { poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
-
-interface FeaturesCardProps {}
 
 interface FeaturesCardProps {
   iconSrc: string;

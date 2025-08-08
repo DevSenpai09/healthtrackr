@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { inter } from "@/lib/fonts";
 

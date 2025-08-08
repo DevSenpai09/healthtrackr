@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
@@ -15,8 +14,8 @@ export default function Ready() {
             Ready to transform your health journey?
           </h2>
           <p className="text-[#6D6D6D] sm:text-lg font-medium">
-            Join thousands of users who've already taken control of their health
-            with HealthTrackr
+            Join thousands of users who&apos;ve already taken control of their
+            health with HealthTrackr
           </p>
         </div>
         <div className="grid grid-cols-2 w-full max-w-sm mx-auto gap-5">

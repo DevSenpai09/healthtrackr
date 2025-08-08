@@ -1,8 +1,6 @@
-import { inter, poppins } from "@/lib/fonts";
+import { poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import React from "react";
-
-interface FaqCardProps {}
 
 interface FaqCardProps {
   ques: string;

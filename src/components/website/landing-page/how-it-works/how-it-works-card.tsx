@@ -2,8 +2,6 @@ import { inter, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import React from "react";
 
-interface HowItWorksCardProps {}
-
 interface HowItWorksCardProps {
   number: number;
   color: string;
