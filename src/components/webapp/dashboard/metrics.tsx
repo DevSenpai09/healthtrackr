@@ -1,5 +1,4 @@
 import React from "react";
-import { PiHeartbeat } from "react-icons/pi";
 import { METRICS } from "./constant";
 
 export default function Metrics() {

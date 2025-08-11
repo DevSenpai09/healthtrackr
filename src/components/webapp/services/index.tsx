@@ -6,7 +6,6 @@ export default function Services() {
   return (
     <div className="px-5 grid gap-5 py-5 content-start">
       <FindMedicalServices />
-
       <MapView />
     </div>
   );
