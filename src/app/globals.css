@@ -121,4 +121,28 @@
   .layout-x-spacing {
     @apply px-5;
   }
+
+  .medical-services-scroll-bar::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+
+  .medical-services-scroll-bar::-webkit-scrollbar-track {
+    @apply bg-[#DEDEDE] mx-40 rounded-full;
+  }
+
+  .medical-services-scroll-bar::-webkit-scrollbar-thumb {
+    @apply bg-[#B9B9B9] cursor-grabbing rounded-full;
+  }
+
+  .custom-scroll-bar::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+
+  .custom-scroll-bar::-webkit-scrollbar-track {
+    @apply bg-[#DEDEDE];
+  }
+
+  .custom-scroll-bar::-webkit-scrollbar-thumb {
+    @apply bg-[#B9B9B9] cursor-grabbing;
+  }
 }

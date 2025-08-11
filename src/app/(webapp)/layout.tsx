@@ -1,3 +1,4 @@
+import Header from "@/components/webapp/_shared/header";
 import Navigation from "@/components/webapp/_shared/navigation";
 
 export default function WebappLayout({
@@ -6,9 +7,12 @@ export default function WebappLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="grid grid-cols-[280px_1fr] overflow-hidden h-screen w-full">
+    <div className="grid grid-cols-[240px_1fr] overflow-hidden h-screen w-full">
       <Navigation />
-      {children}
+      <div className="grid grid-rows-[auto_1fr] relative overflow-y-auto custom-scroll-bar">
+        <Header />
+        {children}
+      </div>
     </div>
   );
 }
