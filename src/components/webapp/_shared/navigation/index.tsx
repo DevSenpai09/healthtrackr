@@ -44,7 +44,7 @@ export default function Navigation() {
               <PiBookOpen />
               Booking
             </Item>
-            <Item matcher={["/hmo"]}>
+            <Item url="/hmo" matcher={["/hmo"]}>
               <PiLeaf />
               HMO
             </Item>
