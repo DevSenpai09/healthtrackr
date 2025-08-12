@@ -11,6 +11,7 @@ interface PlanCardProps {
   keyBenefits: string[];
   exclusions: string[];
   partnerHospitals: number;
+  className?: string;
 }
 
 export default function PlanCard({
@@ -20,13 +21,16 @@ export default function PlanCard({
   name,
   partnerHospitals,
   price,
+  className,
 }: PlanCardProps) {
   const [viewDetails, setViewDetails] = useState(false);
+
   return (
     <div
       className={cn(
         "border-2 rounded-lg p-5 grid grid-rows-[auto_auto_auto_1fr_auto] content-start gap-3 relative shadow-lg",
-        name === "Standard Care" ? "border-[#009951]" : "border-[#DDDDDD]"
+        name === "Standard Care" ? "border-[#009951]" : "border-[#DDDDDD]",
+        className
       )}
     >
       {name === "Standard Care" && (

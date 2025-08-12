@@ -51,7 +51,7 @@ export default function Navigation() {
             <Item matcher={["/emergency"]}>
               <PiFirstAid /> Emergency
             </Item>
-            <Item matcher={["/symptom-check"]}>
+            <Item url="/symptom-checker" matcher={["/symptom-check"]}>
               <PiStethoscope /> Symptom Check
             </Item>
           </div>

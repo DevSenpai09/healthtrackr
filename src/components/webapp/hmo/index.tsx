@@ -43,7 +43,7 @@ export default function Hmo() {
 
       {/* Individual Plans */}
       {!isFamilyPlans && (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {HMO_PLANS?.individual.map((plan, index) => (
             <PlanCard
               key={index}
@@ -60,7 +60,7 @@ export default function Hmo() {
 
       {/* Family Plans */}
       {isFamilyPlans && (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {HMO_PLANS?.family.map((plan, index) => (
             <PlanCard
               key={index}
