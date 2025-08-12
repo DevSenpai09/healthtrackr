@@ -1,14 +1,18 @@
 "use client";
 
 import { User } from "@/components/auth/sign-up-form";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export default function Header() {
+  const router = useRouter();
   const [userData, setUserData] = useState<User | null>(null);
 
   useEffect(() => {
-    typeof window !== "undefined" &&
-      setUserData(JSON.parse(localStorage.getItem("signedInUser")!));
+    if (typeof window !== "undefined") {
+      const data = JSON.parse(localStorage.getItem("signedInUser")!);
+      data ? setUserData(data) : router.push("/sign-in");
+    }
   }, []);
 
   return (
