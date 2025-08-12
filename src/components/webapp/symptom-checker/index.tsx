@@ -31,7 +31,7 @@ Recommendations:
     }
 
     const conditionsText = match.conditions
-      .map((c) => `- ${c.name} (${c.confidence}% confidence)`)
+      .map((c) => `- ${c.name}`)
       .join("\n");
 
     const recommendationsText = match.recommendations

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { FormEvent } from "react";
 import Logo from "../ui/logo";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -8,9 +8,48 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+
+export interface User {
+  fullName: string;
+  email: string;
+  password: string;
+}
 
 export default function SignUpForm() {
   const router = useRouter();
+
+  const handleForm = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e?.currentTarget);
+    const fullName = formData.get("full-name") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const registeredUsers: User[] = JSON.parse(
+      localStorage.getItem("registeredUsers")!
+    );
+
+    if (
+      registeredUsers &&
+      registeredUsers.map((item) => item?.email).includes(email)
+    ) {
+      toast.error("User with this email already exists", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    registeredUsers
+      ? localStorage.setItem(
+          "registeredUsers",
+          JSON.stringify([...registeredUsers, { fullName, email, password }])
+        )
+      : localStorage.setItem(
+          "registeredUsers",
+          JSON.stringify([{ fullName, email, password }])
+        );
+    router.push("/dashboard");
+  };
 
   return (
     <div className="px-5 py-5 grid content-center">
@@ -23,35 +62,48 @@ export default function SignUpForm() {
           </p>
         </div>
 
-        <form action="" className="grid gap-10">
+        <form onSubmit={handleForm} className="grid gap-10">
           <div className="grid gap-5">
             <div className="grid gap-2">
               <Label htmlFor="full-name" className="text-[#656565]">
-                Full name
+                Full name*
               </Label>
-              <Input type="text" className="py-5 border" />
+              <Input
+                type="text"
+                id="full-name"
+                name="full-name"
+                required
+                className="py-5 border"
+              />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="email" className="text-[#656565]">
-                Email
+                Email*
               </Label>
-              <Input type="email" className="py-5 border" />
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="py-5 border"
+              />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="password" className="text-[#656565]">
-                Password
+                Password*
               </Label>
-              <Input type="password" className="py-5 border" />
+              <Input
+                type="password"
+                id="password"
+                name="password"
+                required
+                className="py-5 border"
+              />
             </div>
           </div>
 
           <div className="grid gap-5">
-            <Button
-              type="button"
-              onClick={() => router.push("/dashboard")}
-              variant={"primary"}
-              className="w-full"
-            >
+            <Button type="submit" variant={"primary"} className="w-full">
               Sign Up
             </Button>
             <p className="text-[#6C6C6C]">
