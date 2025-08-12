@@ -16,16 +16,17 @@ import {
   PiStethoscope,
   PiUserLight,
 } from "react-icons/pi";
+import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <div className="bg-[#FAFAFA] border-r border-[#ECECEC] grid grid-rows-[auto_1fr_auto] gap-5 p-5 h-full">
-      <div className="flex items-center justify-between">
+    <div className="bg-[#FAFAFA] border-r border-[#ECECEC] grid grid-rows-[auto_1fr_auto] gap-5 py-5  h-full overflow-hidden">
+      <div className="flex items-center justify-between px-5">
         <Logo size={120} variant="logo-3" />
         <Image src={"/dummy-user.svg"} width={40} height={40} alt="User Icon" />
       </div>
 
-      <div className="grid gap-5 content-start">
+      <div className="grid gap-5 content-start overflow-y-auto px-5 mr-1 side-nav-scroll-bar">
         {/* Main */}
         <div className="grid gap-5">
           <p className="text-sm text-[#969696]">MAIN</p>
@@ -72,10 +73,12 @@ export default function Navigation() {
         </div>
       </div>
 
-      <button className="px-5 py-2.5 text-left text-[#F10505] grid grid-cols-[auto_1fr] items-center gap-3 rounded-md hover:bg-[#F105051a] cursor-pointer">
-        <PiSignOut className="text-xl" />
-        Sign Out
-      </button>
+      <Link href={"/sign-in"} className="grid">
+        <button className="px-5 mx-5 py-2.5 text-left text-[#F10505] grid grid-cols-[auto_1fr] items-center gap-3 rounded-md hover:bg-[#F105051a] cursor-pointer">
+          <PiSignOut className="text-xl" />
+          Sign Out
+        </button>
+      </Link>
     </div>
   );
 }

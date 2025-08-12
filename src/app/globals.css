@@ -122,6 +122,18 @@
     @apply px-5;
   }
 
+  .side-nav-scroll-bar::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  .side-nav-scroll-bar::-webkit-scrollbar-track {
+    @apply bg-[#DEDEDE] my-40 rounded-full;
+  }
+
+  .side-nav-scroll-bar::-webkit-scrollbar-thumb {
+    @apply bg-[#B9B9B9] cursor-grabbing rounded-full;
+  }
+
   .medical-services-scroll-bar::-webkit-scrollbar {
     @apply w-1 h-1;
   }
